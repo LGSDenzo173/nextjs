@@ -16,9 +16,24 @@ export async function POST(request: NextRequest) {
   const obj = await request.json();
 
   return NextResponse.json({
-    // status: obj.status,
+    // status: obj.status, //Single object data displaying
     // Cooking: obj.Type,
     // quantity: obj.quantity,
-    Status: obj,
+    // Status: obj, // ALL Data in one Object
+    Name: obj.name,
+    Email: obj.email,
+    Password: obj.password,
   });
+}
+export async function PUT(request: NextRequest) {
+  const obj = await request.json();
+  return NextResponse.json({
+    Name: obj.name,
+    Email: obj.email,
+    password: obj.password,
+  });
+}
+
+export async function DELETE(request: NextRequest) {
+  const obj = await request.json();
 }
